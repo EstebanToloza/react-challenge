@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [cardSelected, setSelectedCart] = useState(null);
+  let cards = []
+  
+  for(let i = 0; i < 4; i++) {
+    cards.push({id: i})
+  }
+  
+  const handleClick = (id) => {
+    setSelectedCart(id)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        cards.map((card) => {
+          const {id} = card;
+          return (
+            <div key={id} onClick={() => handleClick(id)} className={cardSelected === id && 'isSelected'}>
+              {cardSelected !== id ? "down" : "up"}
+            </div>
+          )}
+        )
+      }
     </div>
   );
 }

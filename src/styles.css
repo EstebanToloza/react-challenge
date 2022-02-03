@@ -1,0 +1,10 @@
+div {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.isSelected {
+    background-color: rgb(129, 126, 126);
+}
