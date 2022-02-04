@@ -4,7 +4,7 @@ function App() {
   const [cardSelected, setSelectedCart] = useState(null);
   let cards = []
   
-  for(let i = 0; i < 4; i++) {
+  for(let i = 0; i < 4; i++) { //el 4 se corresponde con el valor de la props que recibía el componente en el ejercicio original
     cards.push({id: i})
   }
   
